@@ -30,12 +30,16 @@ const UploadImg = styled.img`
   border-radius: 5px;
   object-fit: cover;
   &:before {
+    content: "Choose the Video";
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     width: 400px;
     height: 400px;
+    background-color: #fff;
+    border: 2px dotted #777;
+    color: #999;
     border-radius: 5px;
   }
 `;
