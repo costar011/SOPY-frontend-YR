@@ -13,33 +13,23 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const UnderWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-`;
-
 const FileInput = styled.input`
   display: none;
 `;
 
 const UploadImg = styled.img`
-  width: 300px;
-  height: 300px;
-  margin: 0px 10px;
-  border-radius: 5px;
+  width: 400px;
+  height: 400px;
+
+  border: 1px solid #777;
+  margin: 10px;
   object-fit: cover;
+
   &:before {
-    content: "Choose the Video";
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background-color: #fff;
-    border: 2px dotted #777;
-    color: #999;
     border-radius: 5px;
   }
 `;
@@ -49,7 +39,8 @@ const TextInput = styled.input`
   height: ${(props) => props.height || `40px`};
 
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0px 20px 40px;
+
   padding: 15px;
 
   outline: none;
@@ -69,29 +60,21 @@ const Title = styled.h2`
   margin-bottom: 35px;
 `;
 
-const FileLabel = styled.label`
-  width: 120px;
-  height: 30px;
-  margin-top: 25px;
+const UnderWrapper = styled.div`
+  width: 100%;
 
-  line-height: 25px;
-  background-color: ${(props) => props.theme.checkColor};
-
-  color: #fff;
-
-  box-shadow: ${(props) => props.theme.boxShadow};
-
-  border-radius: ${(props) => props.theme.radius};
-  text-align: center;
-  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0px 0px 50px;
 `;
 
 const RightWrapper = styled.div`
-  width: 50%;
+  width: 45%;
 `;
 
 const LeftWrapper = styled.div`
   width: 50%;
+
   display: flex;
   flex-direction: column;
 `;
@@ -106,19 +89,17 @@ const MM02Presenter = ({ fileChangeHandler, imagePath }) => {
       >
         <Title>Upload Video</Title>
       </Typist>
+
       <UnderWrapper>
         <LeftWrapper>
           <TextInput placeholder="title" />
-          <TextInput placeholder="description" height="360px" />
+          <TextInput placeholder="description" height="340px" />
         </LeftWrapper>
-        {/*
-      <BtnWrapper>
-        <CommonBtn isCreate={true}>UPLOAD</CommonBtn>
-      </BtnWrapper> */}
+
         <RightWrapper>
           <UploadImg src={imagePath} />
           <FileInput type="file" id="file-js" onChange={fileChangeHandler} />
-          <FileLabel htmlFor="file-js">파일선택</FileLabel>
+          <CommonBtn htmlFor="file-js">파일선택</CommonBtn>
         </RightWrapper>
       </UnderWrapper>
     </Wrapper>
