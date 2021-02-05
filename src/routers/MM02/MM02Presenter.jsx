@@ -13,12 +13,10 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const BtnWrapper = styled.div`
-  width: 65%;
+const UnderWrapper = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: row;
 `;
 
 const FileInput = styled.input`
@@ -32,16 +30,12 @@ const UploadImg = styled.img`
   border-radius: 5px;
   object-fit: cover;
   &:before {
-    content: "Choose the Video";
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     width: 400px;
     height: 400px;
-    background-color: #fff;
-    border: 2px dotted #777;
-    color: #999;
     border-radius: 5px;
   }
 `;
@@ -88,7 +82,17 @@ const FileLabel = styled.label`
   cursor: pointer;
 `;
 
-const MM02Presenter = ({ fileChangeHandler }) => {
+const RightWrapper = styled.div`
+  width: 50%;
+`;
+
+const LeftWrapper = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MM02Presenter = ({ fileChangeHandler, imagePath }) => {
   return (
     <Wrapper>
       <Typist
@@ -98,18 +102,21 @@ const MM02Presenter = ({ fileChangeHandler }) => {
       >
         <Title>Upload Video</Title>
       </Typist>
-
-      <FileInput type="file" id="file-js" onChange={fileChangeHandler} />
-
-      <TextInput placeholder="title" />
-      <TextInput placeholder="description" height="360px" />
-
-      <FileInput type="file" id="file-js" onChange={fileChangeHandler} />
-      <FileLabel htmlFor="file-js">파일선택</FileLabel>
-
+      <UnderWrapper>
+        <LeftWrapper>
+          <TextInput placeholder="title" />
+          <TextInput placeholder="description" height="360px" />
+        </LeftWrapper>
+        {/*
       <BtnWrapper>
         <CommonBtn isCreate={true}>UPLOAD</CommonBtn>
-      </BtnWrapper>
+      </BtnWrapper> */}
+        <RightWrapper>
+          <UploadImg src={imagePath} />
+          <FileInput type="file" id="file-js" onChange={fileChangeHandler} />
+          <FileLabel htmlFor="file-js">파일선택</FileLabel>
+        </RightWrapper>
+      </UnderWrapper>
     </Wrapper>
   );
 };
