@@ -1,7 +1,7 @@
 export default {
   mainThemeColor: "#b2bec3",
   subThemeColor: "#95a5a6",
-  pointColor: "#aaa69d",
+  pointColor: "#7158e2",
   errorColor: "#d63031",
   checkColor: "#05c46b",
 
