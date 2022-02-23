@@ -52,11 +52,10 @@ const Text = styled.div``;
 const Footer = () => {
   return (
     <FooterArea>
-      <FooterAreaTop>이용약관</FooterAreaTop>
       <FooterAreaContent>
         <FooterWrapper width={`450px`}>
           <FooterWrapper width={`100%`} height={`50%`}>
-            LOGO가 들어갈 자리입니다.
+            LOGO
           </FooterWrapper>
           <FooterWrapper width={`100%`} height={`50%`}>
             <TextBox>
@@ -73,7 +72,6 @@ const Footer = () => {
             </TextBox>
           </FooterWrapper>
         </FooterWrapper>
-        <FooterWrapper width={`100%`}>RIGHT</FooterWrapper>
       </FooterAreaContent>
     </FooterArea>
   );
